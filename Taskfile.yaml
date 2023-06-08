@@ -1,0 +1,16 @@
+version: "3"
+
+tasks:
+  format:
+    cmds:
+      - swift-format format -i -r ./Sources
+
+  build:
+    cmds:
+      - swift build
+      - codesign -s - --entitlements ./Package.entitlements ./.build/arm64-apple-macosx/debug/vmcli
+
+  release:
+    cmds:
+      - swift build -c release
+      - codesign -s - --entitlements ./Package.entitlements ./.build/arm64-apple-macosx/release/vmcli
