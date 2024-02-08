@@ -1,12 +1,11 @@
-// swift-tools-version: 5.8
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
   name: "vmcli",
   platforms: [
-    .macOS(.v13)
+    .macOS(.v14)
   ],
   products: [
     .executable(
@@ -15,7 +14,7 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.2"),
+    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.3.0"),
   ],
   targets: [
     .executableTarget(
